@@ -1,0 +1,35 @@
+﻿<Window x:Class="WpfChinook.mvvm.views.TrackView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfChinook.mvvm.views"
+        mc:Ignorable="d"
+        Title="Zeneszámok" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Visible">
+            <DataGrid x:Name="datagridTracks" ItemsSource="{Binding Tracks}" IsReadOnly="True" AutoGenerateColumns="False" ColumnWidth="*">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding TrackId}" Width="auto"/>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="Album Id" Binding="{Binding AlbumId}" Width="auto"/>
+                    <DataGridTextColumn Header="Media Type Id" Binding="{Binding MediaTypeId}" Width="auto"/>
+                    <DataGridTextColumn Header="Genre Id" Binding="{Binding GenreId}"/>
+                    <DataGridTextColumn Header="Composer" Binding="{Binding Composer}"/>
+                    <DataGridTextColumn Header="Milliseconds" Binding="{Binding Milliseconds}"/>
+                    <DataGridTextColumn Header="Bytes" Binding="{Binding Bytes}"/>
+                    <DataGridTextColumn Header="Unit Price" Binding="{Binding UnitPrice}"/>
+                    <DataGridTextColumn Header="Album" Binding="{Binding Album}"/>
+                    <DataGridTextColumn Header="Genre" Binding="{Binding Genre}"/>
+                    <DataGridTextColumn Header="Invoice Items" Binding="{Binding InvoiceItems}"/>
+                    <DataGridTextColumn Header="Media Type" Binding="{Binding MediaType}"/>
+                    <DataGridTextColumn Header="Playlists" Binding="{Binding Playlists}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </ScrollViewer>
+    </Grid>
+</Window>

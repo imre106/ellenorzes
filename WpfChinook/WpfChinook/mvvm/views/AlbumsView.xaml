@@ -1,0 +1,26 @@
+﻿<Window x:Class="WpfChinook.mvvm.views.AlbumsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfChinook.mvvm.views"
+        mc:Ignorable="d"
+        Title="Albumok" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Visible">
+            <DataGrid x:Name="datagridAlbums" ItemsSource="{Binding Albums}" IsReadOnly="True" AutoGenerateColumns="False" ColumnWidth="*">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Album Id" Binding="{Binding AlbumId}" Width="auto"/>
+                    <DataGridTextColumn Header="Cím" Binding="{Binding Title}" Width="auto"/>
+                    <DataGridTextColumn Header="Előadó Id" Binding="{Binding Artist.ArtistId}" Width="auto"/>
+                    <DataGridTextColumn Header="Előadó" Binding="{Binding Artist.Name}" Width="auto"/>
+                    <DataGridTextColumn Header="Tracks" Binding="{Binding Album.Track.Name}" Width="auto"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </ScrollViewer>
+    </Grid>
+</Window>
